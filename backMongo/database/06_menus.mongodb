@@ -1,0 +1,26 @@
+
+db.Menu.insertMany([{
+    menuName: "Menu BUENAVISTA BARRANQUILLA", codRestaurant: idBarranquillaResta01._id,
+    menuProduct: [idProduct01._id, idProduct02._id, idProduct03._id, idProduct04._id]
+},
+{
+    menuName: "Menu ALTO PRADO", codRestaurant: idBarranquillaResta02._id,
+    menuProduct: [idProduct07._id, idProduct05._id, idProduct03._id, idProduct04._id, idProduct02._id]
+},
+{
+    menuName: "Menu VIVA BARRANQUILLA", codRestaurant: idBarranquillaResta03._id,
+    menuProduct: [idProduct07._id, idProduct05._id, idProduct03._id]
+},
+{
+    menuName: "Menu PORTAL DEL PRADO", codRestaurant: idBarranquillaResta04._id,
+    menuProduct: [idProduct01._id, idProduct02._id, idProduct03._id, idProduct06._id, idProduct07._id]
+},
+{
+    menuName: "Menu OUTLET ÚNICO", codRestaurant: idBarranquillaResta05._id,
+    menuProduct: [idProduct01._id, idProduct02._id, idProduct03._id, idProduct06._id, idProduct05._id, idProduct07._id]
+},
+{
+    menuName: "Menu VILLA COUNTRY", codRestaurant: idBarranquillaResta06._id,
+    menuProduct: [idProduct01._id, idProduct02._id, idProduct03._id, idProduct05._id]
+}
+]);

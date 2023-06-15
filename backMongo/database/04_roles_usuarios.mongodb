@@ -1,0 +1,170 @@
+// Roles
+db.Rol.insertMany([
+    { rolname: "Administrador", rolstatus: 1 },
+    { rolname: "Usuario", rolstatus: 1 },
+    { rolname: "Invitado", rolstatus: 1 },
+]);
+const idAdmin = db.Rol.findOne({ rolname: "Administrador" }, {_id: 1 });
+const idUsuario = db.Rol.findOne({ rolname: "Usuario" }, {_id: 1 });
+const idInvitado = db.Rol.findOne({ rolname: "Invitado" }, {_id: 1 });
+
+
+db.User.insertMany([
+    {
+        "username": "Malinde",
+        "lastname": "Dawber",
+        "document": "86-308-0496",
+        "type": 2,
+        "phone": "+961 (571) 149-2002",
+        "address": "Suite 75",
+        "estadoUsuario": 1,
+        "codCity": idCartagena._id,
+        "codRol": idAdmin._id
+    }, {
+        "username": "Gretal",
+        "lastname": "Ehlerding",
+        "document": "64-077-2450",
+        "type": 1,
+        "phone": "+84 (849) 792-7206",
+        "address": "Room 1301",
+        "estadoUsuario": 2,
+        "codCity": idBogota._id,
+        "codRol": idAdmin._id
+    }, {
+        "username": "Bartlet",
+        "lastname": "Sandells",
+        "document": "25-071-9768",
+        "type": 1,
+        "phone": "+225 (640) 186-6172",
+        "address": "Apt 1402",
+        "estadoUsuario": 1,
+        "codCity": idBarranquilla._id,
+        "codRol": idInvitado._id
+    }, {
+        "username": "Bria",
+        "lastname": "Attenborrow",
+        "document": "43-940-8926",
+        "type": 1,
+        "phone": "+86 (541) 188-3578",
+        "address": "PO Box 21530",
+        "estadoUsuario": 2,
+        "codCity": idBucaramanga._id,
+        "codRol": idUsuario._id
+    }, {
+        "username": "Maxine",
+        "lastname": "Howson",
+        "document": "08-075-6056",
+        "type": 3,
+        "phone": "+7 (462) 917-0297",
+        "address": "Suite 60",
+        "estadoUsuario": 1,
+        "codCity": idCartagena._id,
+        "codRol": idUsuario._id
+    }, {
+        "username": "Glenine",
+        "lastname": "Sarath",
+        "document": "24-486-0818",
+        "type": 2,
+        "phone": "+389 (440) 678-3094",
+        "address": "Suite 24",
+        "estadoUsuario": 2,
+        "codCity": idBogota._id,
+        "codRol": idUsuario._id
+    }, {
+        "username": "Preston",
+        "lastname": "Matteuzzi",
+        "document": "06-320-6562",
+        "type": 1,
+        "phone": "+223 (511) 640-9091",
+        "address": "Apt 1109",
+        "estadoUsuario": 1,
+        "codCity": idBogota._id,
+        "codRol": idInvitado._id
+    }, {
+        "username": "Prisca",
+        "lastname": "Allan",
+        "document": "44-675-9920",
+        "type": 1,
+        "phone": "+86 (344) 160-0259",
+        "address": "PO Box 87539",
+        "estadoUsuario": 2,
+        "codCity": idBarranquilla._id,
+        "codRol": idUsuario._id
+    }, {
+        "username": "Halimeda",
+        "lastname": "Fountaine",
+        "document": "87-849-7761",
+        "type": 2,
+        "phone": "+62 (319) 734-5615",
+        "address": "PO Box 97148",
+        "estadoUsuario": 2,
+        "codCity": idCali._id,
+        "codRol": idUsuario._id
+    }, {
+        "username": "Jonathon",
+        "lastname": "Lound",
+        "document": "94-947-3231",
+        "type": 3,
+        "phone": "+55 (920) 245-3898",
+        "address": "6th Floor",
+        "estadoUsuario": 1,
+        "codCity": idBarranquilla._id,
+        "codRol": idInvitado._id
+    }, {
+        "username": "Cassie",
+        "lastname": "Sheering",
+        "document": "09-274-3960",
+        "type": 4,
+        "phone": "+62 (538) 939-4712",
+        "address": "Suite 9",
+        "estadoUsuario": 2,
+        "codCity": idCartagena._id,
+        "codRol": idUsuario._id
+    }, {
+        "username": "Shell",
+        "lastname": "Santen",
+        "document": "90-245-6722",
+        "type": 4,
+        "phone": "+380 (620) 902-3386",
+        "address": "Apt 1507",
+        "estadoUsuario": 2,
+        "codCity": idBucaramanga._id,
+        "codRol": idInvitado._id
+    }, {
+        "username": "Miltie",
+        "lastname": "Boar",
+        "document": "69-305-0520",
+        "type": 2,
+        "phone": "+48 (977) 877-4050",
+        "address": "Room 400",
+        "estadoUsuario": 2,
+        "codCity": idBogota._id,
+        "codRol": idUsuario._id
+    }, {
+        "username": "Lissi",
+        "lastname": "Brind",
+        "document": "64-865-7701",
+        "type": 2,
+        "phone": "+1 (502) 577-9124",
+        "address": "Room 806",
+        "estadoUsuario": 1,
+        "codCity": idBucaramanga._id,
+        "codRol": idInvitado._id
+    },
+]);
+
+const idUsuario1 = db.User.findOne({ document: "86-308-0496" }, { _id: 1 });
+const idUsuario2 = db.User.findOne({ document: "64-077-2450" }, { _id: 1 });
+
+db.Access.insertMany([
+    {
+        email: "admin1@gmail.com",
+        password: "$2a$12$C/BN0nTOu8El8/WbPm4Rk.WKqyIeMCLiSB95eEa6YgqSwD.cVNlHy",
+        codUser: idUsuario1._id
+    },
+    {
+        email: "admin2@gmail.com",
+        password: "$2a$12$C/BN0nTOu8El8/WbPm4Rk.WKqyIeMCLiSB95eEa6YgqSwD.cVNlHy",
+        codUser: idUsuario2._id
+    }
+]);

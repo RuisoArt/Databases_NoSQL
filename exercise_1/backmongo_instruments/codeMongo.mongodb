@@ -1,0 +1,33 @@
+const database = "db_backmusic";
+use(database);
+
+/*Definir el Esquema */
+db.createCollection("Product",{
+    validator:{
+        $jsonSchema:{
+            bsonType:"object",
+            required:["productName","productDescription","productColor","productType",
+                        "productAmount","productValue","productTax","productPrice"],
+            properties:{
+                productName:        {bsonType: "string"},
+                productDescription: {bsonType: "string"},
+                productLink:        {bsonType: "string"},
+                productImage:       {bsonType: "string"},
+                productColor:       {bsonType: "string"},
+                productType:        {bsonType: "string"},
+                productAmount:      {bsonType: "int"},
+                productValue:       {bsonType: "double"},
+                productTax:         {bsonType: "double"},
+                productPrice:       {bsonType: "double"},
+                productDate:        {bsonType: ["date","null"]}
+            }
+        }
+    }
+});
+/* Indices y propiedades unicas */
+db.Product.createIndex({productName:1},{unique:true});
+db.Product.createIndex({productName:"text"});
+/* Insertar Datos */
+// Archivo Adjunto codeMongoInsertMany
+
+

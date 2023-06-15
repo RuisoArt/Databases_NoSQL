@@ -1,0 +1,79 @@
+/* menuProduct */
+const _idProduct01 = db.Product.findOne({ productName: "Vaquero Callejero en combo" }, { _id: 1 });
+const _idProduct02 = db.Product.findOne({ productName: "Corral en combo" }, { _id: 1 });
+const _idProduct03 = db.Product.findOne({ productName: "Callejera en combo" }, { _id: 1 });
+const _idProduct04 = db.Product.findOne({ productName: "Vaquero Callejero con beb_ida" }, { _id: 1 });
+const _idProduct05 = db.Product.findOne({ productName: "Vaquero Callejero" }, { _id: 1 });
+const _idProduct06 = db.Product.findOne({ productName: "Corral" }, { _id: 1 });
+const _idProduct07 = db.Product.findOne({ productName: "Callejera" }, { _id: 1 });
+
+/* Ciudades */
+const _idBarranquillaResta01 = db.Restaurant.findOne({ name: "BUENAVISTA BARRANQUILLA" }, { _id: 1 });
+const _idBarranquillaResta02 = db.Restaurant.findOne({ name: "ALTO PRADO" }, { _id: 1 });
+const _idBarranquillaResta03 = db.Restaurant.findOne({ name: "VIVA BARRANQUILLA" }, { _id: 1 });
+const _idBarranquillaResta04 = db.Restaurant.findOne({ name: "PORTAL DEL PRADO" }, { _id: 1 });
+const _idBarranquillaResta05 = db.Restaurant.findOne({ name: "VILLA COUNTRY" }, { _id: 1 });
+const _idBarranquillaResta06 = db.Restaurant.findOne({ name: "PARQUE ALEGRA" }, { _id: 1 });
+
+db.Product.insertMany([
+  {
+    productName: "Vaquero Callejero en combo",
+    productDetail:
+      "Perro caliente con salchicha de 125 g a la parrilla, papa callejera,\
+       cebolla picada y salsas en pan perro + papas medianas (Corral o cascos) + beb_ida PET",
+    productValue: 22900,
+    productPhotoPublic: "11078.jpg",
+    productPhotoPrivate: "IMG_PROD_KTsqRBevo9qrww1Pm15J.jpg",
+  },
+  {
+    productName: "Corral en combo",
+    productDetail:
+      "Hamburguesa de 125 g de carne 100% de res,\
+    con verduras y salsas en pan ajonjolí + papas medianas (Corral o cascos) + beb_ida PET",
+    productValue: 25900,
+    productPhotoPublic: "10008.jpg",
+    productPhotoPrivate: "IMG_PROD_vOu-N8LCz1mAHEogbdgY.jpg",
+  },
+  {
+    productName: "Callejera en combo",
+    productDetail:
+      "Hamburguesa de 125 g de carne 100% de res, queso mozzarella,\
+    papas callejera, salsa de tomate, salsa blanca y mostaza en pan ajonjolí + papas medianas (Corral o cascos) + beb_ida PET",
+    productValue: 26900,
+    productPhotoPublic: "10024.jpg",
+    productPhotoPrivate: "IMG_PROD_VQ9kACuhrSrg8902xo_W.jpg",
+  },
+  {
+    productName: "Vaquero Callejero con beb_ida",
+    productDetail:
+      "Perro caliente con salchicha de 125 g a la parrilla,\
+    papa callejera, cebolla picada y salsas en pan perro + gaseosa",
+    productValue: 19000,
+    productPhotoPublic: "10373.jpg",
+    productPhotoPrivate: "IMG_PROD_BRnUQKyPa-Fd2UEEk2MU.jpg",
+  },
+  {
+    productName: "Vaquero Callejero",
+    productDetail:
+      "Perro caliente con salchicha de 125 g a la parrilla,\
+    papa callejera, cebolla picada y salsas en pan perro",
+    productValue: 17000,
+    productPhotoPublic: "10372.jpg",
+    productPhotoPrivate: "IMG_PROD_5_qGdcjKQY3-NvKdcdgT.jpg",
+  },
+  {
+    productName: "Corral",
+    productDetail: "Hamburguesa de 125 g de carne 100% de res, con verduras y salsas en pan ajonjolí",
+    productValue: 20000,
+    productPhotoPublic: "10372.jpg",
+    productPhotoPrivate: "IMG_PROD_D_id9HsyHHmvqiENsxpLR.jpg",
+  },
+  {
+    productName: "Callejera",
+    productDetail: "Hamburguesa de 125 g de carne 100% de res, queso mozzarella, papas callejera, salsa de tomate, salsa blanca y mostaza en pan ajonjolí",
+    productValue: 21000,
+    productPhotoPublic: "10030.jpg",
+    productPhotoPrivate: "IMG_PROD_D_id9HsyHHmvqiENsxpFS.jpg",
+  },
+ 
+]);

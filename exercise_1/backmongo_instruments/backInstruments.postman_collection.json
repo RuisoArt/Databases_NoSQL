@@ -1,0 +1,112 @@
+{
+	"info": {
+		"_postman_id": "f7f8c7b0-05ef-4fb9-89fa-091a113848ee",
+		"name": "backInstruments",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "getInstruments",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3201/api/public/product/all",
+					"host": [
+						"localhost"
+					],
+					"port": "3201",
+					"path": [
+						"api",
+						"public",
+						"product",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "postInstruments",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"productName\":\"producto de tienda music hacks 1\",\r\n\"productDescription\":\"nulla suscipit ligula in lacus curabitur at ipsum ac\",\r\n\"productLink\":\"https://\",\r\n\"productImage\":\"una imagen aqui\",\r\n\"productColor\":\"Teal\",\r\n\"productType\":\"B2500\",\r\n\"productAmount\":31,\r\n\"productValue\":1967.31441,\r\n\"productTax\":3.38027,\r\n\"productPrice\":5433.61198,\r\n\"productDate\":\"7/10/2022\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3201/api/public/product/add",
+					"host": [
+						"localhost"
+					],
+					"port": "3201",
+					"path": [
+						"api",
+						"public",
+						"product",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "putInstruments",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"_id\": \"6428431df58befe7d564c404\",\r\n        \"productName\": \"producto de tienda music hacks 1 actualizado\",\r\n        \"productDescription\": \"nulla suscipit ligula in lacus curabitur at ipsum ac\",\r\n        \"productLink\": \"https://\",\r\n        \"productImage\": \"una imagen aqui\",\r\n        \"productColor\": \"Teal\",\r\n        \"productType\": \"B2500\",\r\n        \"productAmount\": 31,\r\n        \"productValue\": 1967.31441,\r\n        \"productTax\": 3.38027,\r\n        \"productPrice\": 5433.61198,\r\n        \"productDate\": \"2022-07-10T05:00:00.000Z\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3201/api/public/product/up",
+					"host": [
+						"localhost"
+					],
+					"port": "3201",
+					"path": [
+						"api",
+						"public",
+						"product",
+						"up"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delInstruments",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:3201/api/public/product/del/6422f9b0c90b5d15b02a4b9f",
+					"host": [
+						"localhost"
+					],
+					"port": "3201",
+					"path": [
+						"api",
+						"public",
+						"product",
+						"del",
+						"6422f9b0c90b5d15b02a4b9f"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

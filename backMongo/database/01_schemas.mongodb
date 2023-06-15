@@ -1,0 +1,123 @@
+const database = "db_backmongo";
+use (database);
+
+db.createCollection("Product",{
+    validator:{
+        $jsonSchema:{
+            bsonType:"object",
+            required:["productName", "productDetail", "productValue", "productPhotoPublic", "productPhotoPrivate"],
+            properties:{
+                productName:{bsonType:"string"},
+                productDetail:{bsonType:"string"},
+                productValue:{bsonType:"int"},
+                productPhotoPublic:{bsonType:"string"},
+                productPhotoPrivate:{bsonType:"string"}
+            }
+        }
+    }
+});
+
+db.createCollection("City",{
+    validator:{
+        $jsonSchema:{
+            bsonType:"object",
+            required:["cityName","publicName","privateName","status"],
+            properties:{
+                cityName:{bsonType:"string"},
+                publicName:{bsonType:"string"},
+                privateName:{bsonType:"string"},
+                status:{enum:[1,2,3,4]}
+            }
+        }
+    }
+});
+//db.City.createIndex({cityName: 1},{unique:true});
+//db.City.createIndex({cityName: "text"});
+//const idCity = db.City.findOne({cityName:""},{_id:1});
+
+db.createCollection("Restaurant",{
+    validator:{
+        $jsonSchema:{
+            bsonType:"object",
+            required:["name","address","phone","timetable","status","codCity"],
+            properties:{
+                name:{bsonType:"string"},
+                address:{bsonType:"string"},
+                phone:{bsonType:"string"},
+                timetable:{bsonType:"string"},
+                status:{enum:[1,2,3]},
+                codCity:{bsonType:"objectId"}
+            }
+        }
+    }
+});
+const idBarranquilla = db.City.findOne({cityName: "BARRANQUILLA" },{ _id: 1 });
+const idBogota = db.City.findOne({ cityName: "BOGOTÁ, D.C." }, {_id: 1 });
+const idBucaramanga = db.City.findOne({ cityName: "BUCARAMANGA" }, {_id: 1 });
+const idCali = db.City.findOne({ cityName: "CALI" }, {_id: 1 });
+const idCartagena = db.City.findOne({ cityName: "CARTAGENA" }, {_id: 1 });
+//db.Restaurant.createIndex({name:1},{unique:true});
+//db.Restaurant.createIndex({name:"text"});
+db.createCollection("Rol",{
+    validator:{
+        $jsonSchema:{
+            bsonType:"object",
+            required:["rolname","rolstatus"],
+            properties:{
+                rolname:{bsonType:"string"},
+                rolstatus:{enum:[1,2,3]}
+            }
+        }
+    }
+});
+db.Rol.createIndex({rolname:1},{unique:true});
+
+db.createCollection("User",{
+    validator:{
+        $jsonSchema:{
+            bsonType:"object",
+            required:["username","lastname","document","type","phone","address","codRol","codCity"],
+            properties:{
+                username:{bsonType:"string"},
+                lastname:{bsonType:"string"},
+                document:{bsonType:"string"},
+                type:{enum:[1,2,3,4]},
+                phone:{bsonType:"string"},
+                address:{bsonType:"string"},
+                codRol:{bsonType:"objectId"},
+                codCity:{bsonType:"objectId"},
+            }
+        }
+    }
+});
+db.User.createIndex({document:1},{unique:true});
+
+db.createCollection("Access",{
+    validator:{
+        $jsonSchema:{
+            bsonType:"object",
+            required:["email","password","codUser"],
+            properties:{
+                email:{bsonType:"string"},
+                password:{bsonType:"string"},
+                codUser:{bsonType:"objectId"}
+            }
+        }
+    }
+});
+db.Access.createIndex({email:1},{unique:true});
+
+db.createCollection("Menu",{
+    validator:{
+     $jsonSchema:{
+          bsonType:"object",
+          required:["menuName", "codRestaurant", "menuProduct"],
+          properties:{
+               menuName:{bsonType:"string"},
+               codRestaurant:{bsonType:"objectId"},
+               menuProduct:{bsonType: "array", items:{bsonType:"objectId"}}
+          }
+     }
+    }
+});
+
